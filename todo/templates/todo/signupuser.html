@@ -1,8 +1,15 @@
+<!-- Always extend at the top -->
+{% extends 'todo/base.html' %}
+
+<!-- Put the block extended -->
+{% block content %}
+
 <!-- User form -->
 <h1>Sign up</h1>
-
-<form method="POST" action="#">
+<h2 style="color:red">{{ error }}</h2>
+<form method="POST">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit">submit</button>
+  <button type="submit">Sign in</button>
 </form>
+{% endblock %}
