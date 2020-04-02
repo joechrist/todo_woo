@@ -1,0 +1,28 @@
+<!-- Always extend at the top -->
+{% extends 'todo/base.html' %}
+
+<!-- Put the block extended -->
+{% block content %}
+
+<!-- User form -->
+<h2 style="color:red">{{ error }}</h2>
+{{ todo.title }}
+<!--Save form-->
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Save</button>
+</form>
+
+<!-- Complete todo part-->
+<form method="POST" action="{% url 'completetodo' todo.id %}">
+  {% csrf_token %}
+  <button type="submit">Complete</button>
+</form>
+
+<!--Delete todo part-->
+<form method="POST" action="{% url 'deletetodo' todo.id %}">
+  {% csrf_token %}
+  <button type="submit">Delete</button>
+</form>
+{% endblock %}

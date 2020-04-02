@@ -3,16 +3,18 @@
 
 <!-- Put the block extended -->
 {% block content %}
-<h1>Current Todos</h1>
+<h1>Current Todos :</h1>
 <!-- List of todos in a for loop-->
 <ul>
   <!-- todos here is the 'key' in def currenttodos function-->
   {% for todo in todos %}
 
   <li>
-    {% if todo.important %}<b
-      >{% endif %}{{ todo.title }} {% if todo.important %}</b
-    >{% endif %} {% if todo.memo %} - {{ todo.memo }}{% endif %}
+    <a href="{% url 'viewtodo' todo.id %}">
+      {% if todo.important %}<b
+        >{% endif %}{{ todo.title }} {% if todo.important %}</b
+      >{% endif %} {% if todo.memo %} - {{ todo.memo }}{% endif %}
+    </a>
   </li>
   {% endfor %}
 </ul>
