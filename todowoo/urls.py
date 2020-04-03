@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from todo import views
+from django.conf.urls.static import static  # Important for static files
 
 urlpatterns = [
     path('admin/', admin.site.urls),
