@@ -1,0 +1,22 @@
+<!-- Always extend at the top -->
+{% extends 'todo/base.html' %}
+
+<!-- Put the block extended -->
+{% block content %}
+<h1>Completed :</h1>
+<!-- List of todos in a for loop-->
+<ul>
+  <!-- todos here is the 'key' in def currenttodos function-->
+  {% for todo in todos %}
+
+  <li>
+    <a href="{% url 'viewtodo' todo.id %}">
+      {% if todo.important %}<b
+        >{% endif %}{{ todo.title }} {% if todo.important %}</b
+      >{% endif %} {% if todo.memo %} - {{ todo.memo }}{% endif %}
+      {{ todo.datecompleted }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -2,9 +2,15 @@
 {% if user.is_authenticated %}
 <p>Logged in as: {{ user.username }}</p>
 
+<!-- Links  -->
+<a href="{% url 'createtodo' %}">Create</a>
+<a href="{% url 'currenttodos' %}">Current</a>
+<a href="{% url 'completedtodos' %}">Completed</a>
+
 <!-- Form for the Logout page -->
 <form action="{% url 'logoutuser' %}" method="post">
   {% csrf_token %}
+  <br />
   <button type="submit">Logout</button>
 </form>
 
