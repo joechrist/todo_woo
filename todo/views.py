@@ -29,7 +29,8 @@ def signupuser(request):
                 user.save()
                 login(request, user)
                 return redirect('currenttodos')
-            except IntegrityError:  # Primary key error - only one key
+            except IntegrityError:
+                # Primary key error - only one key
                 # Return the same page but with an error for the user
                 # Because there is already a user with the same name on db
                 return render(request, 'todo/signupuser.html',
