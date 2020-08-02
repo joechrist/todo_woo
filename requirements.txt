@@ -1,6 +1,6 @@
 asgiref==3.2.7
 autopep8==1.5
-Django==3.0.4
+Django==3.0.7
 pep8==1.7.1
 Pillow==7.2.0
 pycodestyle==2.5.0
