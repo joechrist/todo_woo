@@ -5,4 +5,4 @@ pep8==1.7.1
 Pillow==9.3.0
 pycodestyle==2.5.0
 pytz==2019.3
-sqlparse==0.3.1
+sqlparse==0.4.4
